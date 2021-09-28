@@ -1,2 +1,2 @@
-#  ParsBigBird: Persian BigBird transformers for long sequences (4096 tokens)
+# ParsBigBird: a Persian transformer for long sequences (4096)
 
