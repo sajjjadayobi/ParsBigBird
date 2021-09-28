@@ -1,5 +1,5 @@
-# ParsBigBird: a Persian transformer for long sequences (4096)
-the original **Bert** and [ParsBert]() can handle texts with tokens length until 512 but in many tasks like summarization or question answering we need to have texts with bigger input. [BigBird]() model can handle text until 4096 due to sparse attention, in this work we've trained big bird model for Persian langiage
+# ParsBigBird: a Persian transformer for long sequences
+the original **Bert** and [ParsBert]() can handle texts with tokens length until 512 but in many tasks like summarization or question answering we need to have texts with bigger input. [BigBird]() model can handle text until **4096** due to sparse attention, in this work we've trained big bird model for Persian langiage
 
 <p align="center">
   <img src="https://s4.uupload.ir/files/bird_88cg.png">
