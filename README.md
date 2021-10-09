@@ -10,7 +10,7 @@ MODEL_NAME = "SajjadAyoubi/bigbird-fa-base"
 
 # by default its in `block_sparse` block_size=32
 model = BigBirdModel.from_pretrained(MODEL_NAME, block_size=16)
-# you can use full attention like the following: it's recommended when input isn't longer than 512
+# you can use full attention like the following: use this when input isn't longer than 512
 model = BigBirdModel.from_pretrained(MODEL_NAME, attention_type="original_full")
 
 text = "😃 امیدوارم مدل بدردبخوری باشه چون خیلی طول کشید تا ترین بشه"
