@@ -19,11 +19,17 @@ tokens = tokenizer(text, return_tensors='pt')
 output = model(**tokens) # contextualized embedding
 ```
 
+## Evaluation: 🌡️
+on DigiKala and PersianQA
+
 ## Pretraining details: 🔭
 It is a pretrained model on Persian section of Oscar dataset using a masked language modeling (MLM) objective. Following the original BERT training, 15% of tokens were masked. It was introduced in this [paper]() and first released in this [repository](). Document longer than 4096 were split into multiple documents and documents that were much smaller than 4096 were joined using the [SEP] token. Model is warm started from Distil-BERT’s checkpoint. It doesn't matter how many tokens is input text in block_sparse mode it just attends to 256 tokens. Also it’s recommended to use original_full (instead of block sparse) till 512 seqlen.
 
 ## Fine Tuning recommendations: 🐤
 this model needs a reasonable amount of GPU memory so in order to have a reasonable batch size, `gradient_checkpointing` and `gradient_accumulation_steps` are recommended. 
+
+### Text Classification Example: 👷‍♂️👷‍♀️
+DigiKala Text Classification on Colab
 
 ## Contact us: 🤝
 If you have a technical question regarding the model, pretraining, code or publication, please create an issue in the repository. This is the fastest way to reach us.
