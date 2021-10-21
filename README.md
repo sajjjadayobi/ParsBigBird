@@ -39,8 +39,13 @@ output = model(**tokens) # contextualized embedding
 
 ### As Fill Blank
 ```python
-from transformers import Pipeline
-MODEL_NAME = "SajjadAyoubi/bigbird-fa-base"
+from transformers import pipeline
+MODEL_NAME = 'SajjadAyoubi/bigbird-fa-base'
+
+fill = pipeline('fill-mask', model=MODEL_NAME, tokenizer=MODEL_NAME)
+results = fill('تهران پایتخت [MASK] است.')
+print(results[0]['token_str'])
+>>> 'ایران'
 ```
 
 
