@@ -4,7 +4,7 @@
 </span>
 
 
-# ParsBigBird:🐦 a Persian transformer for long sequences
+# ParsBigBird:🐦 Persian Bert for long sequences
 [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/abs/2005.12515) can handle texts of token lengths up to 512, but many tasks such as summarization and question answering require longer texts. [BigBird](https://arxiv.org/abs/2007.14062) model can handle text until **4096** due to sparse attention, in this work we've trained big bird model for Persian language to process texts up to 4096 in Persian(farsi) language
 
 ## Evaluation: 🌡️
@@ -62,7 +62,7 @@ we didn't publish any papers on the work. However, if you did, please cite us pr
 ```bibtex
 @misc{ParsBigBird,
   author          = {Ayoubi, Sajjad},
-  title           = {ParsBigBird: a Persian transformer for long sequences},
+  title           = {ParsBigBird: Persian Bert for long sequences},
   year            = 2021,
   publisher       = {GitHub},
   journal         = {GitHub repository},
