@@ -5,10 +5,10 @@
 
 
 # ParsBigBird: Persian Bert For **Long-Range** Sequences
-[Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/abs/2005.12515) can handle texts of token lengths up to 512, but many tasks such as summarization and question answering require longer texts. [BigBird](https://arxiv.org/abs/2007.14062) model can handle text until **4096** due to sparse attention, in this work we've trained big bird model for Persian language to process texts up to 4096 in Persian(farsi) language
+The [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/abs/2005.12515) algorithms can handle texts with token lengths of up to 512, however, many tasks such as summarizing and answering questions require longer texts. In our work, we have trained the [BigBird](https://arxiv.org/abs/2007.14062) model for the Persian language to process texts up to 4096 in the Farsi (Persian) language using sparse attention.
 
 ## Evaluation: 🌡️
-we have evaluated the model on two tasks with different seqence lengths, SnappFood Sentiment Analysis dataset and PerisanQA Question-Answering dataset
+We have evaluated the model on two tasks with different seqence lengths, SnappFood Sentiment Analysis dataset and PerisanQA Question-Answering dataset
 
 |         Name       | Params |    SnappFood (Acc)   |  PersianQA (F1)   |
 | :----------------: | :----: | :------------------: | :---------------: |
@@ -48,15 +48,14 @@ print(results[0]['token_str'])
 >>> 'ایران'
 ```
 
-
 ## Pretraining details: 🔭
-It is a pretrained model on Persian section of Oscar dataset using a masked language modeling (MLM) objective. Following the original BERT training, 15% of tokens were masked. It was introduced in this [paper]() and first released in this [repository](). Document longer than 4096 were split into multiple documents and documents that were much smaller than 4096 were joined using the [SEP] token. Model is warm started from Distil-BERT’s checkpoint. It doesn't matter how many tokens is input text in block_sparse mode it just attends to 256 tokens. 
-for more details you can take a look at config.json at model card in 
+This model was pretrained using a masked language model (MLM) objective on the Persian section of the Oscar dataset. Following the original BERT training, 15% of tokens were masked. This was first described in this [paper](https://arxiv.org/abs/2007.14062) and released in this [repository](https://github.com/google-research/bigbird). Documents longer than 4096 were split into multiple documents, while documents much smaller than 4096 were merged using the [SEP] token. Model is warm started from Distil-BERT’s checkpoint. 
+- For more details, you can take a look at config.json at the model card in 🤗 Model Hub
 
-## Fine Tuning recommendations: 🐤
-this model needs a reasonable amount of GPU memory so in order to have a reasonable batch size, `gradient_checkpointing` and `gradient_accumulation_steps` are recommended. as far as this model isn't really big it's a good idea to first fine tune it on your dataset using Masked LM objective (also called intermediate fine tuning) lastly fine tuned on our main task. Also it’s recommended to use original_full (instead of block sparse) till 512 seqlen.
+## Fine Tuning Recommendations: 🐤
+Due to the model's memory requirements, `gradient_checkpointing` and `gradient_accumulation` should be used to maintain a reasonable batch size. Considering this model isn't really big, it's a good idea to first fine-tune it on your dataset using Masked LM objective (also called intermediate fine-tuning) before implementing the main task. In block_sparse mode, it doesn't matter how many tokens are input. It just attends to 256 tokens. Furthermore, original_full should be used up to 512 sequence lengths (instead of block sparse).
 
-### Fine tuning example 👷‍♂️👷‍♀️
+### Fine Tuning Examples 👷‍♂️👷‍♀️
 
 | Dataset                               | Fine Tuning Example                                          |
 | ------------------------------------- | ------------------------------------------------------------ |
