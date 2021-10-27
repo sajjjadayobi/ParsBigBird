@@ -4,7 +4,7 @@
 </span>
 
 
-# ParsBigBird:🐦 Persian Bert for long sequences
+# ParsBigBird: Persian Bert For **Long-Range** Sequences
 [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/abs/2005.12515) can handle texts of token lengths up to 512, but many tasks such as summarization and question answering require longer texts. [BigBird](https://arxiv.org/abs/2007.14062) model can handle text until **4096** due to sparse attention, in this work we've trained big bird model for Persian language to process texts up to 4096 in Persian(farsi) language
 
 ## Evaluation: 🌡️
@@ -57,7 +57,11 @@ for more details you can take a look at config.json at model card in
 this model needs a reasonable amount of GPU memory so in order to have a reasonable batch size, `gradient_checkpointing` and `gradient_accumulation_steps` are recommended. as far as this model isn't really big it's a good idea to first fine tune it on your dataset using Masked LM objective (also called intermediate fine tuning) lastly fine tuned on our main task. Also it’s recommended to use original_full (instead of block sparse) till 512 seqlen.
 
 ### Fine tuning example 👷‍♂️👷‍♀️
-DigiMag Text Classification on Colab
+
+| Dataset                               | Fine Tuning Example                                          |
+| ------------------------------------- | ------------------------------------------------------------ |
+| Digikala Magazine Text Classification | <a href="https://colab.research.google.com/github/sajjjadayobi/PersianQA/blob/main/notebooks/Demo.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a> |
+
 
 ## Contact us: 🤝
 If you have a technical question regarding the model, pretraining, code or publication, please create an issue in the repository. This is the fastest way to reach us.
