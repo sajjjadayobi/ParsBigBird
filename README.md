@@ -23,9 +23,9 @@ we have evaluated the model on two tasks with different seqence lengths, SnappFo
 
 ### As Contexulized Word Embedding 
 ```python
-from transformers import BigBirdModel, TFBigBirdModel, AutoTokenizer
-MODEL_NAME = "SajjadAyoubi/bigbird-fa-base"
+from transformers import BigBirdModel, AutoTokenizer
 
+MODEL_NAME = "SajjadAyoubi/bigbird-fa-uncased"
 # by default its in `block_sparse` block_size=32
 model = BigBirdModel.from_pretrained(MODEL_NAME, block_size=32)
 # you can use full attention like the following: use this when input isn't longer than 512
@@ -40,8 +40,8 @@ output = model(**tokens) # contextualized embedding
 ### As Fill Blank
 ```python
 from transformers import pipeline
-MODEL_NAME = 'SajjadAyoubi/bigbird-fa-base'
 
+MODEL_NAME = 'SajjadAyoubi/bigbird-fa-uncased'
 fill = pipeline('fill-mask', model=MODEL_NAME, tokenizer=MODEL_NAME)
 results = fill('تهران پایتخت [MASK] است.')
 print(results[0]['token_str'])
@@ -57,7 +57,7 @@ for more details you can take a look at config.json at model card in
 this model needs a reasonable amount of GPU memory so in order to have a reasonable batch size, `gradient_checkpointing` and `gradient_accumulation_steps` are recommended. as far as this model isn't really big it's a good idea to first fine tune it on your dataset using Masked LM objective (also called intermediate fine tuning) lastly fine tuned on our main task. Also it’s recommended to use original_full (instead of block sparse) till 512 seqlen.
 
 ### Fine tuning example 👷‍♂️👷‍♀️
-DigiKala Text Classification on Colab
+DigiMag Text Classification on Colab
 
 ## Contact us: 🤝
 If you have a technical question regarding the model, pretraining, code or publication, please create an issue in the repository. This is the fastest way to reach us.
