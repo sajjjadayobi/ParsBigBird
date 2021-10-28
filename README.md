@@ -13,7 +13,7 @@ The [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/ab
 ## Evaluation: 🌡️
 We have evaluated the model on three tasks with different sequence lengths
 
-|                             Name                                 | Params |    SnappFood (F1)   | Digikala Magazine |  PersianQA (F1)   | 
+|                             Name                                 | Params |    SnappFood (F1)   | Digikala Magazine(F1) |  PersianQA (F1)   | 
 | :--------------------------------------------------------------: | :----: | :-----------------: | :---------------: |  :--------------: |
 | [distil-bigbird-fa-zwnj](https://github.com/sajjjadayobi/ParsBigBird) |  78M   |        85.43%       |     **94.05%**    |     **73.34%**    |
 |       [bert-base-fa](https://github.com/hooshvare/parsbert)      |  118M  |      **87.98%**     |       93.65%      |       70.06%      |
