@@ -1,6 +1,6 @@
 <span align="center">
     <a href="https://huggingface.co/SajjadAyoubi/"><img src="https://img.shields.io/static/v1?label=%F0%9F%A4%97%20Hugging%20Face&message=SajjadAyoubi&color=yellow"></a>
-    <a href="https://colab.research.google.com/github/sajjjadayobi/PersianQA/blob/main/notebooks/Demo.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a>
+    <a href="https://colab.research.google.com/github/sajjjadayobi/ParsBigBird/blob/main/notebooks/ParsBigBirdTextClassification.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a>
 </span>
 
 # ParsBigBird: Persian Bert For **Long-Range** Sequences
@@ -62,7 +62,7 @@ Due to the model's memory requirements, `gradient_checkpointing` and `gradient_a
 
 | Dataset                               | Fine Tuning Example                                          |
 | ------------------------------------- | ------------------------------------------------------------ |
-| Digikala Magazine Text Classification | <a href="https://colab.research.google.com/github/sajjjadayobi/PersianQA/blob/main/notebooks/Demo.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a> |
+| Digikala Magazine Text Classification | <a href="https://colab.research.google.com/github/sajjjadayobi/ParsBigBird/blob/main/notebooks/ParsBigBirdTextClassification.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a> |
 
 
 ## Contact us: 🤝
