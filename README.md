@@ -3,9 +3,12 @@
     <a href="https://colab.research.google.com/github/sajjjadayobi/PersianQA/blob/main/notebooks/Demo.ipynb"><img src="https://img.shields.io/static/v1?label=Colab&message=Fine-tuning Example&logo=Google%20Colab&color=f9ab00"></a>
 </span>
 
-
 # ParsBigBird: Persian Bert For **Long-Range** Sequences
 The [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/abs/2005.12515) algorithms can handle texts with token lengths of up to 512, however, many tasks such as summarizing and answering questions require longer texts. In our work, we have trained the [BigBird](https://arxiv.org/abs/2007.14062) model for the Persian language to process texts up to 4096 in the Farsi (Persian) language using sparse attention.
+
+
+![big bird's attention block](https://github.com/sajjjadayobi/ParsBigBird/blob/main/assets/bigbird-sparse-attention.png)
+*Big bird's attention block from [BigBird's paper](https://arxiv.org/abs/2007.14062)*
 
 ## Evaluation: 🌡️
 We have evaluated the model on two tasks with different seqence lengths, SnappFood Sentiment Analysis dataset and PerisanQA Question-Answering dataset
