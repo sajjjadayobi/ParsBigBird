@@ -11,15 +11,15 @@ The [Bert](https://arxiv.org/abs/1810.04805) and [ParsBert](https://arxiv.org/ab
 *Big bird's attention block from [BigBird's paper](https://arxiv.org/abs/2007.14062)*
 
 ## Evaluation: 🌡️
-We have evaluated the model on two tasks with different seqence lengths, SnappFood Sentiment Analysis dataset and PerisanQA Question-Answering dataset
+We have evaluated the model on three tasks with different sequence lengths
 
-|         Name       | Params |    SnappFood (Acc)   |  PersianQA (F1)   |
-| :----------------: | :----: | :------------------: | :---------------: |
-| [distil-bigbird-fa]() |  100M  | -                    |        -          |
-| [bert-base-fa]()   |  162M  |        87.98%        |       70.06%      |
+|                             Name                                 | Params |    SnappFood (F1)   | Digikala Magazine |  PersianQA (F1)   | 
+| :--------------------------------------------------------------: | :----: | :-----------------: | :---------------: |  :--------------: |
+| [distil-bigbird-fa-zwnj](https://github.com/sajjjadayobi/ParsBigBird) |  78M   |        85.43%       |     **94.05%**    |     **73.34%**    |
+|       [bert-base-fa](https://github.com/hooshvare/parsbert)      |  118M  |      **87.98%**     |       93.65%      |       70.06%      |
 
-- we have evaluated our model on two dataset, one with long texts and another with small texts to show its ability to handle both of them
-- the model performs compatible with ParsBert while being 2x smaller 
+- Despite being as big as distill-bert, the model performs equally well as ParsBert and is much better on PersianQA which requires much more context
+- This evaluation was based on `max_lentgh=2048` (It can be changed up to 4096)
 
 
 ## How to use❓
@@ -28,7 +28,7 @@ We have evaluated the model on two tasks with different seqence lengths, SnappFo
 ```python
 from transformers import BigBirdModel, AutoTokenizer
 
-MODEL_NAME = "SajjadAyoubi/bigbird-fa-uncased"
+MODEL_NAME = "SajjadAyoubi/distil-bigbird-fa-zwnj"
 # by default its in `block_sparse` block_size=32
 model = BigBirdModel.from_pretrained(MODEL_NAME, block_size=32)
 # you can use full attention like the following: use this when input isn't longer than 512
@@ -44,7 +44,7 @@ output = model(**tokens) # contextualized embedding
 ```python
 from transformers import pipeline
 
-MODEL_NAME = 'SajjadAyoubi/bigbird-fa-uncased'
+MODEL_NAME = 'SajjadAyoubi/distil-bigbird-fa-zwnj'
 fill = pipeline('fill-mask', model=MODEL_NAME, tokenizer=MODEL_NAME)
 results = fill('تهران پایتخت [MASK] است.')
 print(results[0]['token_str'])
