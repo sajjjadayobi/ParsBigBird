@@ -24,7 +24,7 @@ We have evaluated the model on three tasks with different sequence lengths
 
 ## How to use❓
 
-### As Contexulized Word Embedding 
+### As Contextualized Word Embedding 
 ```python
 from transformers import BigBirdModel, AutoTokenizer
 
