@@ -73,7 +73,7 @@ we didn't publish any papers on the work. However, if you did, please cite us pr
 ```bibtex
 @misc{ParsBigBird,
   author          = {Ayoubi, Sajjad},
-  title           = {ParsBigBird: Persian Bert for long sequences},
+  title           = {ParsBigBird: Persian Bert For Long-Range Sequences},
   year            = 2021,
   publisher       = {GitHub},
   journal         = {GitHub repository},
