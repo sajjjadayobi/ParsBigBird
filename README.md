@@ -49,7 +49,7 @@ print(results[0]['token_str'])
 ```
 
 ## Pretraining details: 🔭
-This model was pretrained using a masked language model (MLM) objective on the Persian section of the Oscar dataset. Following the original BERT training, 15% of tokens were masked. This was first described in this [paper](https://arxiv.org/abs/2007.14062) and released in this [repository](https://github.com/google-research/bigbird). Documents longer than 4096 were split into multiple documents, while documents much smaller than 4096 were merged using the [SEP] token. Model is warm started from Distil-BERT’s checkpoint. 
+This model was pretrained using a masked language model (MLM) objective on the Persian section of the Oscar dataset. Following the original BERT training, 15% of tokens were masked. This was first described in this [paper](https://arxiv.org/abs/2007.14062) and released in this [repository](https://github.com/google-research/bigbird). Documents longer than 4096 were split into multiple documents, while documents much smaller than 4096 were merged using the [SEP] token. Model is warm started from `distilbert-fa`’s [checkpoint](https://huggingface.co/HooshvareLab/distilbert-fa-zwnj-base). 
 - For more details, you can take a look at config.json at the model card in 🤗 Model Hub
 
 ## Fine Tuning Recommendations: 🐤
